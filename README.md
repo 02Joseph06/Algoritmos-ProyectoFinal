@@ -1,6 +1,6 @@
 # Proyecto Final - Detección de fraude en transacciones
 
-Implementación de C1, C2 y C3 del caso del Grupo 4.
+Implementación de C1, C2 y C3 del caso del Grupo 4 Realizado por Luigi Rincon, Juan Holguin y Daivid Sanchez.
 
 ## Alcance actual
 
