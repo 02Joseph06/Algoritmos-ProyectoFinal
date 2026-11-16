@@ -28,7 +28,18 @@ def knapsack_01(
     selected: list[int] = []
     remaining = capacity
     for item in range(item_count, 0, -1):
-        if table[item][remaining] != table[item - 1][remaining]:
+        # Recalcular la decisión evita inferir inclusión solo por una
+        # diferencia entre filas, especialmente con ceros o empates.
+        without_item = table[item - 1][remaining]
+        weight = weights[item - 1]
+        value = values[item - 1]
+        with_item = (
+            value + table[item - 1][remaining - weight]
+            if weight <= remaining
+            else without_item
+        )
+        # La tabla conserva la solución sin el elemento cuando hay empate.
+        if weight <= remaining and with_item > without_item:
             index = item - 1
             selected.append(index)
             remaining -= weights[index]

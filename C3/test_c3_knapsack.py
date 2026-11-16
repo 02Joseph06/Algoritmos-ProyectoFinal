@@ -27,3 +27,12 @@ def test_rejects_invalid_inputs():
         knapsack_01([-1], [2], 4)
     with pytest.raises(ValueError):
         knapsack_01([1], [2], -1)
+
+
+def test_reconstructs_without_including_zero_value_or_tied_items():
+    assert knapsack_01([1], [0], 1) == (0, [])
+    assert knapsack_01([1, 1], [1, 1], 1) == (1, [0])
+
+
+def test_reconstructs_positive_value_zero_weight_item():
+    assert knapsack_01([0], [4], 0) == (4, [0])
