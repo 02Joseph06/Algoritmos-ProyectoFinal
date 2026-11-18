@@ -78,6 +78,14 @@ transactions = generate_transactions(1000, seed=1042)
 
 Los runners preparan los datos antes de iniciar el cronómetro. [`experimentos/medir.py`](./experimentos/medir.py) solo mide `ejecutar(datos)`, de modo que la generación, las semillas y la configuración no contaminan el tiempo del algoritmo. Cada tamaño usa al menos cinco repeticiones y reporta mediana y desviación estándar.
 
+## Presentación web
+
+La presentación visual del proyecto está en la carpeta local `presentacion/`. Está excluida de Git porque se utiliza como material de exposición y contiene únicamente HTML, CSS y JavaScript estático.
+
+Para verla, abre [`presentacion/index.html`](./presentacion/index.html) directamente en el navegador. No requiere servidor, instalación de dependencias ni conexión a internet.
+
+La página está completamente en español e incluye el problema, la arquitectura, los módulos C1-C6, complejidades, resultados, conclusiones e integridad académica.
+
 ## Pruebas
 
 Se requiere Python 3.10 o posterior y `pytest` (`python -m pip install pytest`).
